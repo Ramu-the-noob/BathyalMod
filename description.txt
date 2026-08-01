@@ -23,12 +23,5 @@ Standard water mechanics won't keep you alive down here.
 
     Light Deprivation: Flares and standard torches will fail. Utilize glowing algae, deep-sea crystal lanterns, and sonar-based weapons to map your surroundings.
 
-Vast New Arsenal & Threats
-
-    150+ New Items: Craft heavy diving armor, harpoon cannons, depth charges, and magic weapons powered by bioluminescence.
-
-    New Enemies: Fight off everything from ambush predators like giant anglerfish to swarms of parasitic isopods.
-
-    3 Major Bosses: Face the apex predators of the deep, culminating in a colossal leviathan that slumbers at the very bottom of the world.
 
     Developer Note: Bathyal heavily modifies world generation. We highly recommend creating a new world to experience all the new biomes and structures properly!
