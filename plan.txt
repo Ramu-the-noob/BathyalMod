@@ -1,0 +1,63 @@
+# Bathyal Mod - Master Design Document
+**Target Engine:** tModLoader 1.4.4+
+**Core Concept:** A total conversion and exploration mod that replaces standard Terraria progression with a descent into a massive, desolate deep-sea trench.
+
+---
+
+## 1. World Layout & Generation
+The standard Terraria world generation is completely overridden. The map is divided into three distinct vertical slices.
+
+### The Left Wastes (Ice & Snow)
+* **Surface:** Completely solid Snow and Ice wasteland. No natural caves.
+* **The Spawn:** Player spawns on a Lihzahrd platform at the center of the world, with early progression directing them left to a custom spawn camp (featuring custom tent furniture).
+* **The Dungeon Hub:** * *Upper Level:* Safe zone for early looting (Dungeon Guardian spawns are disabled above a certain depth).
+    * *Mid Level:* Prebuilt, structured arenas specifically designed for the Skeletron and Lunatic Cultist fights.
+    * *Deep Level (Post-Plantera):* A Submarine Bay locked behind an unbreakable door. Requires a specific boss key to enter. Used for vehicle crafting/upgrades.
+
+### The Right Wastes (Desert & Catacombs)
+* **Surface:** Completely solid Sand, Hardened Sand, and Sandstone.
+* **Landmarks:** * *Shimmer Well:* A guaranteed surface structure leading directly down to the Aether.
+    * *Goblin Camp:* Located at the far right edge of the world, featuring custom tents and a permanently boosted Goblin spawn rate for combat farming.
+* **The Catacombs:** * An underground mini-dungeon situated between the Well and the Goblin Camp.
+    * Contains guaranteed early-game aquatic accessories (Flippers, Jellyfish Necklace).
+    * *Deep Catacombs:* Locked until Hardmode. Contains isolated biome-fishing lakes for gathering trench-specific resources without diving.
+
+### The Center (The Bathyal Trench)
+* **The Evil Island:** A centralized landmass floating above the trench containing the World Evil. Defeating the Evil Boss here is mandatory to mine the plug blocking Layer 2.
+* **The Trench:** A massive, dynamically generated trapezoid extending to depth 3250. Filled entirely with a custom liquid (`HadalWater` via `ModLiquidLib`) to bypass vanilla evaporation and hardcoded limits. The walls feature smooth, organic sine-wave generation.
+
+---
+
+## 2. Trench Layers & Progression Mechanics
+
+### Layer 1: Sunlight Zone
+* **Access:** Open immediately beneath the Evil Island.
+* **Mechanics:** Standard aquatic movement. Introduces the player to the custom liquid physics.
+
+### Layer 2: Twilight Zone
+* **Access:** Blocked by a thick plug of Ebonstone/Crimstone. Requires the Nightmare/Deathbringer Pickaxe (post-Evil Boss) to breach.
+* **Mechanics:** * *Breath Loss:* Accelerated oxygen drain requiring early diving gear.
+    * *Vision Loss:* Screen edges darken (via custom vignette shader) to simulate depth.
+
+### Layer 3: Midnight Zone
+* **Access:** Blocked by a Hellstone plug and a custom "Tumour" tile.
+* **The Tumour Boss (Wall of Flesh Alt):** * Breaking the Tumour summons the boss and triggers Hardmode.
+    * Upon spawning, the boss rapidly generates an unbreakable Lihzahrd Brick arena around the player to restrict movement.
+    * *Failsafe:* If the player dies, the boss despawns and the arena walls instantly dissolve to prevent soft-locking or lost items.
+    * *Victory:* Dissolves the arena walls, clears the Hellstone plug, and permanently stops natural Tumour generation.
+
+### Layer 4: Abyssal Zone
+* **Access:** Blocked by a Jungle Temple-style locked door. Requires a key dropped by a custom Plantera-alternative boss (spawned via bulbs in Layer 3).
+* **Mechanics:** * *Crushing Pressure:* Player suffers rapid, lethal breath loss unless they are actively piloting a high-tier Submarine Mount.
+    * *Boss Override:* Breath loss mechanics are temporarily suspended while a boss is actively engaged in this layer.
+
+### Layer 5: Hadal Zone & The Lunar Temple
+* **Access (Part 1):** Blocked by a deep-sea temple structure. Defeating the Lunar Pillars removes the outer barrier blocks, allowing entry to the temple interior.
+* **Access (Part 2):** Defeating the Moon Lord flags the temple bricks as `fragile/cracked`. This triggers a massive chain-reaction collapse, destroying the temple and opening the final, uncharted depths of the map.
+
+---
+
+## 3. Technical Implementation Notes
+* **Data Saving:** Progression flags (e.g., `downedTumour`, `downedPlanteraAlt`, `templeCollapsed`) must be tracked in a custom `ModSystem` utilizing `SaveWorldData` and `LoadWorldData`.
+* **Hazards:** Depth hazards (breath, pressure, slowing) are calculated in a `ModPlayer` class by checking the player's `Y` coordinate and their `Player.mount.Active` status.
+* **Compilation:** Handled natively via the `dotnet` SDK. Ensure workshop library dependencies (`ModLiquidLib`) are correctly mapped in `build.txt`.

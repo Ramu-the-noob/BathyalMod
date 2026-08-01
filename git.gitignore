@@ -1,0 +1,9 @@
+# Build folders
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio / IDE files
+.vs/
+*.user
+*.suo
+.vscode/

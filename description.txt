@@ -1,0 +1,34 @@
+Bathyal
+
+Bathyal is a massive world overhaul and expansion mod that transforms Terraria’s oceans from a shallow puddle at the edge of the map into a sprawling, terrifying, and beautiful subterranean frontier.
+
+The surface world is only the beginning. Plunge into the lightless depths, master new underwater survival mechanics, and uncover the ancient secrets buried in the trench.
+The Ocean Overhaul
+
+The standard Ocean biome has been completely reimagined. The seafloor now drops away into expansive, deep-water cave systems that stretch toward the Underworld.
+
+    The Twilight Zone: Descend 200 meters into a dimly lit aquatic cavern network teeming with bioluminescent flora and strange new aquatic life.
+
+    The Midnight Trench: At 1,000 meters deep, the light completely fades. You will need specialized equipment just to see the horrors lurking in the pitch black.
+
+    The Benthic Vents: Boiling hydrothermal vents where the ocean meets magma, harboring heat-resistant extremophiles and rare, volatile ores.
+
+Deep Sea Mechanics
+
+Standard water mechanics won't keep you alive down here.
+
+    Crushing Pressure: Gills and basic breathing potions are not enough. Craft reinforced diving suits and specialized submersibles to withstand the immense pressure of the deep sea.
+
+    Buoyancy & Currents: Master new movement accessories to navigate treacherous underwater slipstreams and avoid being dragged into the abyss.
+
+    Light Deprivation: Flares and standard torches will fail. Utilize glowing algae, deep-sea crystal lanterns, and sonar-based weapons to map your surroundings.
+
+Vast New Arsenal & Threats
+
+    150+ New Items: Craft heavy diving armor, harpoon cannons, depth charges, and magic weapons powered by bioluminescence.
+
+    New Enemies: Fight off everything from ambush predators like giant anglerfish to swarms of parasitic isopods.
+
+    3 Major Bosses: Face the apex predators of the deep, culminating in a colossal leviathan that slumbers at the very bottom of the world.
+
+    Developer Note: Bathyal heavily modifies world generation. We highly recommend creating a new world to experience all the new biomes and structures properly!

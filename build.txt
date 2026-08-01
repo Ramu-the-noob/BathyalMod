@@ -1,0 +1,4 @@
+displayName = Bathyl
+author = RamuTheNoob
+version = 0.1
+modReferences = ModLiquidLib
